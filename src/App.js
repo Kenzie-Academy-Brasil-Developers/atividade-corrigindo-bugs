@@ -14,7 +14,7 @@ export const App = () => {
   };
 
   const handleCardsRequest = (deckId) => {
-    fetch("https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=52")
+    fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=52`)
       .then((res) => res.json())
       .then((res) => setCardsList([...res.cards]));
   };
@@ -41,3 +41,4 @@ export const App = () => {
     </div>
   );
 };
+export default App
