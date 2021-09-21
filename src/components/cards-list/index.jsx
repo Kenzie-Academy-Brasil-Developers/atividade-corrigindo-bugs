@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Card } from "../card";
 import "./style.css";
+import Card from "../card";
 
 const CardsList = ({ cardsList }) => {
   const [suitFilter, setSuitFilter] = useState(false);
 
   const handleSuitFilter = (e) => {
-    if (e.target.id = suitFilter) {
-      suitFilter = true;
+    if (e.target.id === suitFilter) {
+      setSuitFilter(true)
       e.target.checked = false;
     } else {
-      suitFilter = e.target.id
+      setSuitFilter(e.target.id)
     }
   };
 
@@ -50,7 +50,6 @@ const CardsList = ({ cardsList }) => {
         />
         <label for="DIAMONDS">Ouros</label>
       </div>
-    </div>
     <div>
 
       {!suitFilter &&
@@ -65,6 +64,7 @@ const CardsList = ({ cardsList }) => {
             <Card card={actual} key={index} />;
           })}
     </div>
+    </div>
   );
 };
-
+export default CardsList

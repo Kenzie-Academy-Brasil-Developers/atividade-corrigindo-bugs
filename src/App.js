@@ -1,5 +1,5 @@
 import CardsList from "./components/cards-list";
-import useEffect from "react";
+import { useEffect, useState} from "react";
 import "./App.css";
 
 export const App = () => {
@@ -37,7 +37,7 @@ export const App = () => {
       <button onChange={handleShowDeck} className="new-deck-button">
         Novo baralho
       </button>
-      {ShowDeck & <CardsList cardsList={cardsList} />}
+      {showDeck && <CardsList cardsList={cardsList} />}
     </div>
   );
 };
